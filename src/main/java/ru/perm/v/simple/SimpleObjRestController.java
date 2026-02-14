@@ -24,11 +24,11 @@ public class SimpleObjRestController {
     @GetMapping("/{message}")
     public ResponseEntity<?> echo(@PathVariable("message") String message) {
         if (message == null || message.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body("message is empty");
+            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body("message is empty"); // error cod 502
         }
 
         if (message.length() < 2) {
-            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body("message is too short");
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("message is too short"); // error cod 503
         }
         return ResponseEntity.ok(new SimpleObj(message));
     }
