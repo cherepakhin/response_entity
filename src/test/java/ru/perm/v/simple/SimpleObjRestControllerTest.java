@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class SimpleObjControllerTest {
+class SimpleObjRestControllerTest {
     @Autowired
     SimpleObjRestController simpleObjRestController;
 
